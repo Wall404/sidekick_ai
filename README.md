@@ -1,16 +1,16 @@
-# Sidekick AI - Módulos de Intención y Recomendación
+# Sidekick AI - Intent and Recommendation Modules
 
-## Instalación
-1. Clona el repositorio.
-2. Instala las dependencias: `pip install -r requirements.txt`.
-3. Ejecuta las migraciones: `python manage.py migrate`.
-4. Inicia el servidor: `python manage.py runserver`.
+## Installation
+1. Clone the repository.
+2. Install dependencies: `pip install -r requirements.txt`.
+3. Run migrations: `python manage.py migrate`.
+4. Start the server: `python manage.py runserver`.
 
 ## Endpoints
-- **Módulo de Intención**: `POST /api/intent/`
-  - Entrada: `{"user_input": "My skin feels dry"}`
-  - Salida: `{"intent": "Skin dryness intent"}`
+- **Intent Module**: `POST /api/intent/`
+  - Input: `{"user_input": "My skin feels dry"}`
+  - Output: `{"intent": "Skin dryness intent"}`
 
-- **Módulo de Recomendación**: `POST /api/recommendation/`
-  - Entrada: No se necesita enviar datos (usa la última intención guardada).
-  - Salida: `{"advice": "Use a moisturizer with hyaluronic acid."}`
+- **Recommendation Module**: `POST /api/recommendation/`
+  - Input: No data needs to be sent (uses the latest saved intent).
+  - Output: `{"advice": "Use a moisturizer with hyaluronic acid."}`
