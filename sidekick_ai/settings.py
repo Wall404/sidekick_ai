@@ -88,11 +88,11 @@ db_info = urlparse(DATABASE_URL)
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': db_info.path[1:],  # Nombre de la base de datos
-        'USER': db_info.username,   # Usuario de PostgreSQL
-        'PASSWORD': db_info.password,  # Contraseña de PostgreSQL
-        'HOST': db_info.hostname,   # Host de la base de datos
-        'PORT': db_info.port,       # Puerto de PostgreSQL
+        'NAME': 'sidekick_ai',        # Nombre de la base de datos
+        'USER': 'sidekick_user',      # Usuario de PostgreSQL
+        'PASSWORD': 'sidekick_password',  # Contraseña de PostgreSQL
+        'HOST': 'localhost',          # Host de la base de datos
+        'PORT': '5432',               # Puerto de PostgreSQL
     }
 }
 
@@ -131,7 +131,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [BASE_DIR / 'static']
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field

@@ -1,7 +1,5 @@
-#version: '3.8'
-
+version: '3.8'
 services:
-  # Servicio para la base de datos PostgreSQL
   db:
     image: postgres:13
     environment:
@@ -10,22 +8,14 @@ services:
       POSTGRES_PASSWORD: sidekick_password
     volumes:
       - postgres_data:/var/lib/postgresql/data/
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/app
     ports:
-      - "5432:5432"
-
-#  # Servicio para la aplicación Django
-#  web:
-#    build: .
-#    command: python manage.py runserver 0.0.0.0:8000
-#    volumes:
-#      - .:/app
-#    ports:
-#      - "8000:8000"
-#    depends_on:
-#      - db
-#    environment:
-#      DATABASE_URL: postgres://sidekick_user:sidekick_password@db:5432/sidekick_ai
-
-# Volumen para persistir los datos de PostgreSQL
+      - "8000:8000"
+    depends_on:
+      - db
 volumes:
   postgres_data:

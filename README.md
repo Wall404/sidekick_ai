@@ -7,7 +7,10 @@
 4. Inicia el servidor: `python manage.py runserver`.
 
 ## Endpoints
-- **Módulo de Intención**:
-  - `POST /api/intent/`: Procesa la entrada del usuario y devuelve la intención detectada.
-- **Módulo de Recomendación**:
-  - `POST /api/recommendation/`: Genera una recomendación basada en la intención del usuario.
+- **Módulo de Intención**: `POST /api/intent/`
+  - Entrada: `{"user_input": "My skin feels dry"}`
+  - Salida: `{"intent": "Skin dryness intent"}`
+
+- **Módulo de Recomendación**: `POST /api/recommendation/`
+  - Entrada: No se necesita enviar datos (usa la última intención guardada).
+  - Salida: `{"advice": "Use a moisturizer with hyaluronic acid."}`
