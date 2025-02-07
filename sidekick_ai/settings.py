@@ -88,11 +88,11 @@ db_info = urlparse(DATABASE_URL)
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'sidekick_ai',        # Nombre de la base de datos
-        'USER': 'sidekick_user',      # Usuario de PostgreSQL
-        'PASSWORD': 'sidekick_password',  # Contraseña de PostgreSQL
-        'HOST': 'localhost',          # Host de la base de datos
-        'PORT': '5432',               # Puerto de PostgreSQL
+        'NAME': 'sidekick_ai',
+        'USER': 'sidekick_user',
+        'PASSWORD': 'sidekick_password',
+        'HOST': 'db',  # Use the Docker service name
+        'PORT': '5432',
     }
 }
 
@@ -132,7 +132,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [BASE_DIR / 'static']
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
